@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>FixProjects</title>
+	<link rel="icon" href="Assets/Icono/icono.ico" />
+	<meta name="description" content="FixProjects" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;900&family=Exo+2:wght@400;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+	<div class="stars"></div>
+	<div class="stars2"></div>
+	
+	<header>
+		<div class="logo-container">
+			<!-- Logo de letras -->
+			<img src="Assets/Logo/Letras.png" alt="FixProjects" class="logo" />
+		</div>
+		<button class="btn-about" onclick="openAbout()">Sobre mí</button>
+	</header>
+	
+	<main>
+		<p class="intro">Bienvenido. Aquí podrás encontrar mis proyectos empaquetados (7ZIP) con enlaces directos. Al lado de cada título puedes <strong>consultarme</strong> sobre errores/bugs/dudas sobre dicho proyecto.</p>
+
+		<section class="games" aria-label="Lista de videojuegos">
+			<article class="card">
+				<div class="card-glow"></div>
+				<div class="meta">
+					<a class="game-link" href="#" data-win="https://www.mediafire.com/file/uzedwd527dh04fc/Terraria-By_FixProjects.7z/file" onclick="openPlatform(event)">
+						<span class="game-icon">🎮</span>
+						<span>Terraria_v1.4.5.2</span>
+					</a>
+					<div class="actions">
+						<button class="btn" data-game="Terraria_v1.4.5.2" onclick="openForm(event)">Consultar</button>
+					</div>
+				</div>
+				<p class="small">Oficial-FixProjects.</p>
+			</article>
+
+			<article class="card">
+				<div class="card-glow"></div>
+				<div class="meta">
+					<a class="game-link" href="#" data-win="https://www.7-zip.org/a/7z2501-x64.exe" onclick="openPlatform(event)">
+						<span class="game-icon">🔩</span>
+						<span>7zip</span>
+					</a>
+					<div class="actions">
+						<button class="btn" data-game="Nombre del Juego 2" onclick="openForm(event)">Consultar</button>
+					</div>
+				</div>
+				<p class="small">7zip</p>
+			</article>
+		</section>
+
+		<div id="contact-backdrop" class="modal-backdrop" role="dialog" aria-hidden="true">
+			<div class="modal" role="document" aria-labelledby="contact-title">
+				<h3 id="contact-title">Enviar consulta</h3>
+				<form id="contact-form" action="https://formspree.io/f/xdadnbpo" method="POST">
+					<input type="hidden" name="game" id="form-game" value="" />
+					<label for="os-select">Problema en</label>
+					<select id="os-select" name="os">
+						<option value="Windows">Windows</option>
+					</select>
+
+					<label for="email">Tu correo (opcional)</label>
+					<input id="email" name="_replyto" type="email" placeholder="ejemplo@dominio.com" />
+
+					<label for="message">Descripción del problema</label>
+					<textarea id="message" name="message" placeholder="Describe el problema, pasos para reproducir, logs..." required></textarea>
+
+					<p class="small">La Informacion que cedas Aquí seran automaticamente enviadas a el correo de FixProjects, desde ya, suscribite y muchas gracias:D (Si pones un correo, me contactare contigo)</p>
+
+					<div style="display:flex;gap:8px;justify-content:flex-end;margin-top:10px">
+						<button type="button" class="btn ghost" onclick="closeForm()">Cancelar</button>
+						<button class="btn" type="submit">Enviar</button>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<div id="platform-backdrop" class="modal-backdrop" role="dialog" aria-hidden="true">
+			<div class="modal" role="document" aria-labelledby="platform-title">
+				<h3 id="platform-title">Seleccionar plataforma</h3>
+				<p class="small" id="platform-game">—</p>
+				<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
+					<button id="platform-win" class="btn ghost">Windows</button>
+					<button class="btn ghost" style="margin-left:auto" onclick="closePlatform()">Cerrar</button>
+				</div>
+			</div>
+		</div>
+
+		<div id="about-backdrop" class="modal-backdrop" role="dialog" aria-hidden="true">
+			<div class="modal modal-about" role="document" aria-labelledby="about-title">
+				<h3 id="about-title">Sobre mí</h3>
+				<div class="about-content">
+					<p>¡Hola! Soy <strong>FixProjects</strong>, Tengo 16 años y soy desarrollador/Tester(Certificado) y creador de contenido.</p>
+					
+					<p>Me dedico a empaquetar y distribuir videojuegos, facilitando el acceso a títulos populares para la comunidad. Mi objetivo es hacer que estos proyectos sean accesibles para todos, con versiones optimizadas y fáciles de instalar(Portables).</p>
+					
+					<p>En este espacio encontraras mis Proyectos libres, leido linea por linea de codigo, y en la mayoria de los casos modeados, siempre aplicando Ingenieria Inversa, para la mayor seguridad para ustedes.</p>
+					
+					<div class="about-stats">
+						<div class="stat">
+							<span class="stat-icon">🎮</span>
+							<span class="stat-text">Ingenieria Inversa</span>
+						</div>
+						<div class="stat">
+							<span class="stat-icon">💻</span>
+							<span class="stat-text">Desarrollo en Programacion(C#,C++,Python)</span>
+						</div>
+						<div class="stat">
+							<span class="stat-icon">🚀</span>
+							<span class="stat-text">Soporte directo</span>
+						</div>
+					</div>
+					
+					<p class="about-contact">Sígueme en mis redes sociales para estar al tanto de nuevos proyectos y actualizaciones.</p>
+				</div>
+				<button class="btn" style="width:100%;margin-top:16px" onclick="closeAbout()">Cerrar</button>
+			</div>
+		</div>
+		
+		<footer>
+			<div>Todos los derechos reservados por FixProjects © <span id="year"></span></div>
+			<div class="socials" aria-label="Redes sociales">
+				<a class="social" href="https://www.instagram.com/diriak.py/" title="Instagram" aria-label="Instagram">
+					<img src="Assets/RedeSociales/IconoIG.png" alt="Instagram" style="width:35px;height:20px" />
+				</a>
+				<a class="social" href="https://www.tiktok.com/@diriak.py" title="TikTok" aria-label="TikTok">
+					<img src="Assets/RedeSociales/IconoTikTok.png" alt="TikTok" style="width:20px;height:20px" />
+				</a>
+				<a class="social" href="https://www.youtube.com/@FixProjects" title="YouTube" aria-label="YouTube">
+					<img src="Assets/RedeSociales/IconoYoutube.png" alt="YouTube" style="width:20px;height:20px" />
+				</a>
+				<a class="social" href="mailto:fixprojects777@gmail.com" title="Gmail" aria-label="Gmail">
+					<img src="Assets/RedeSociales/Iconogmail.png" alt="Gmail" style="width:20px;height:20px" />
+				</a>
+			</div>
+		</footer>
+	</main>
+	<script src="script.js"></script>
+</body>
+</html>
