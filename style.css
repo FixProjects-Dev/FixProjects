@@ -1,11 +1,24 @@
+/* Primero el más general (pantallas más grandes) */
+.about-content {
+    font-size: 16px; /* tamaño base */
+}
+
+/* Tablets y móviles grandes */
 @media (max-width: 768px) {
     .about-content {
-        font-size: 14px; /* o el tamaño que necesites */
+        font-size: 14px;
     }
 }
 
-/* Para celulares más pequeños */
+/* Móviles medianos */
 @media (max-width: 480px) {
+    .about-content {
+        font-size: 13px;
+    }
+}
+
+/* Móviles pequeños */
+@media (max-width: 360px) {
     .about-content {
         font-size: 12px;
     }
@@ -435,12 +448,19 @@ textarea {
 
 /* About modal styles */
 .modal-about {
-	max-width: 600px;
+	max-width: 700px;
+	width: 95%; /* Añadido: no ocupar todo el ancho en móvil */
+	margin: 0 auto; /* Centrado */
 }
 
 .about-content {
 	line-height: 1.8;
 	color: var(--text);
+	width: 100%; /* Añadido */
+	max-width: 100%; /* Añadido */
+	box-sizing: border-box; /* Añadido */
+	overflow-wrap: break-word; /* Añadido: rompe palabras largas */
+	word-wrap: break-word; /* Añadido: compatibilidad */
 }
 
 .about-content p {
@@ -461,6 +481,39 @@ textarea {
 	background: var(--bg);
 	border-radius: 12px;
 	border: 2px solid var(--border);
+	box-sizing: border-box; /* Añadido */
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+	.modal-about {
+		width: 98%; /* Más ancho en tablets */
+		max-width: 95vw; /* No más del 95% del viewport */
+	}
+	
+	.about-stats {
+		grid-template-columns: 1fr; /* Una columna en móvil */
+		padding: 15px;
+		gap: 12px;
+	}
+}
+
+@media (max-width: 480px) {
+	.modal-about {
+		width: 100%;
+		max-width: 100%;
+		margin: 0;
+	}
+	
+	.about-content {
+		font-size: 14px;
+		line-height: 1.6;
+	}
+	
+	.about-stats {
+		padding: 12px;
+		margin: 16px 0;
+	}
 }
 
 .stat {
