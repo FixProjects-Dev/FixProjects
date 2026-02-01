@@ -1,8 +1,16 @@
-@media (max-width: 600px) {
-		.about-content {
-			font-size: 10px;
-		}
-	}
+@media (max-width: 768px) {
+    .about-content {
+        font-size: 14px; /* o el tamaño que necesites */
+    }
+}
+
+/* Para celulares más pequeños */
+@media (max-width: 480px) {
+    .about-content {
+        font-size: 12px;
+    }
+}
+
 :root {
 	--primary: #1E9FF2;
 	--primary-dark: #0D7AC4;
