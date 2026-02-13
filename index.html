@@ -68,7 +68,7 @@
 				<div class="card-glow"></div>
 				<div class="meta">
 					<a class="game-link" href="#" data-win="https://www.7-zip.org/a/7z2501-x64.exe" onclick="openPlatform(event)">
-						<span class="game-icon">🔩</span>
+						<span class="game-icon">📩</span>
 						<span>7zip</span>
 					</a>
 					<div class="actions">
@@ -78,6 +78,22 @@
 				<p class="small">7zip</p>
 			</article>
 			<!-- ========== FIN VIDEOJUEGO ========== -->
+
+			<!-- ========== INICIO VIDEOJUEGO ANDROID ========== -->
+			<article class="card">
+				<div class="card-glow"></div>
+				<div class="meta">
+					<a class="game-link" href="#" data-android="minecraft" onclick="openPlatform(event)">
+						<span class="game-icon">🎮</span>
+						<span>MinecraftLite - Android</span>
+					</a>
+					<div class="actions">
+						<button class="btn" data-game="Minecraft Android" onclick="openForm(event)">Consultar</button>
+					</div>
+				</div>
+				<p class="small">Oficial-FixProjects.</p>
+			</article>
+			<!-- ========== FIN VIDEOJUEGO ANDROID ========== -->
 		</section>
 
 		<div id="contact-backdrop" class="modal-backdrop" role="dialog" aria-hidden="true">
@@ -112,7 +128,20 @@
 				<p class="small" id="platform-game">—</p>
 				<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
 					<button id="platform-win" class="btn ghost">Windows</button>
+					<button id="platform-android" class="btn ghost" style="display:none">Android</button>
 					<button class="btn ghost" style="margin-left:auto" onclick="closePlatform()">Cerrar</button>
+				</div>
+			</div>
+		</div>
+
+		<div id="android-options-backdrop" class="modal-backdrop" role="dialog" aria-hidden="true">
+			<div class="modal" role="document" aria-labelledby="android-title">
+				<h3 id="android-title">Seleccionar descarga Android</h3>
+				<p class="small">Elige la opción que deseas descargar</p>
+				<div style="display:flex;flex-direction:column;gap:10px;margin-top:20px">
+					<button id="minecraft-lite-btn" class="btn">MinecraftLite</button>
+					<button id="addons-lite-btn" class="btn">Addons Ultra Lites</button>
+					<button class="btn ghost" onclick="closeAndroidOptions()">Cancelar</button>
 				</div>
 			</div>
 		</div>
